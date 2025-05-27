@@ -42,7 +42,7 @@ public class AntrianKendaraan {
     }
 
     public void jumlahAntrian() {
-        System.out.println("Jumlah kendaraan dalam Antrian: " + size);
+        System.out.println(">> Jumlah kendaraan dalam Antrian: " + size);
     }
 
     public void tampilkanSemua() {

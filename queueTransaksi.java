@@ -23,6 +23,7 @@ public class queueTransaksi {
         queue[rear] = trx;
         rear = (rear + 1) % queue.length;
         size++;
+        System.out.println(">> Transaksi berhasil dicatat");
     }
 
     public void tampilTransaksi() {
