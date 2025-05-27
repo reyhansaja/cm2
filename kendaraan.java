@@ -8,4 +8,7 @@ public class kendaraan {
         this.tipe = tipe;
         this.merk = merk;
     }
+    public void tampilkanInformasi(){
+        System.out.println("Plat nomor: "+platNomor+"\ntipe: "+tipe+"\nmerk: "+merk);
+    }
 }
