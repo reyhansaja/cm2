@@ -12,7 +12,6 @@ public class AntrianKendaraan {
     }
 
     public boolean isFull() {
-        // Simulasi: Anggap antrian penuh jika lebih dari 100
         return size >= 100;
     }
 
@@ -25,46 +24,25 @@ public class AntrianKendaraan {
             rear = newNode;
         }
         size++;
-        System.out.println("Mahasiswa berhasil ditambahkan ke antrian.");
+        System.out.println(">> kendaraan Masuk ke dalam antrian.");
     }
 
     public kendaraan dequeue() {
         if (isEmpty()) {
             System.out.println("Antrian kosong, tidak bisa memanggil.");
-            return null; // Mengembalikan null jika antrian kosong
+            return null; 
         }
-        kendaraan temp = front.data; // Simpan data kendaraan yang akan di-dequeue
+        kendaraan temp = front.data; 
         front = front.next;
         if (front == null) {
             rear = null;
         }
         size--;
-        return temp; // Mengembalikan data kendaraan yang di-dequeue
-    }
-
-
-    public void clear() {
-        front = rear = null;
-        size = 0;
-        System.out.println("Antrian telah dikosongkan.");
-    }
-
-    public void tampilkanDepan() {
-        if (!isEmpty())
-            System.out.println("Antrian Terdepan: " + front.data);
-        else
-            System.out.println("Antrian kosong.");
-    }
-
-    public void tampilkanBelakang() {
-        if (!isEmpty())
-            System.out.println("Antrian Paling Belakang: " + rear.data);
-        else
-            System.out.println("Antrian kosong.");
+        return temp; 
     }
 
     public void jumlahAntrian() {
-        System.out.println("Jumlah Mahasiswa dalam Antrian: " + size);
+        System.out.println("Jumlah kendaraan dalam Antrian: " + size);
     }
 
     public void tampilkanSemua() {
