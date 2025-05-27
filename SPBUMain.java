@@ -38,7 +38,7 @@ public class SPBUMain {
                      if (dilayani == null) {
                          System.out.println("Antrian kosong.");
                      } else {
-                         System.out.println("Melayani: " + dilayani);
+                         System.out.println("Petugas melayani " + dilayani.platNomor);
                          System.out.print("Jenis BBM: ");
                          String bbm = sc.nextLine();
                          System.out.print("Jumlah Liter: ");
@@ -47,7 +47,6 @@ public class SPBUMain {
                          double harga = sc.nextDouble(); sc.nextLine();
                          transaksi trx = new transaksi(dilayani.platNomor, bbm, liter, harga);
                          transaksiQueue.enqueue(trx);
-                         System.out.println("Total Bayar: Rp" + trx.total);
                      }
                      break;
                 case 5:

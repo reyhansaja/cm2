@@ -30,11 +30,11 @@ public class queueTransaksi {
             System.out.println("Belum ada transaksi.");
             return;
         }
-        System.out.println("\n=== Riwayat Transaksi ===");
+        System.out.println("\n-- Riwayat Transaksi --");
+        System.out.println("Daftar Transaksi:");
         for (int i = 0; i < size; i++) {
             int idx = (front + i) % queue.length;
-            System.out.println((i + 1) + ". " + queue[idx]);
+            System.out.println(queue[idx].platNomor + ": Rp " + queue[idx].total);
         }
     }
-
 }

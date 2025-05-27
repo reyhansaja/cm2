@@ -34,7 +34,6 @@ public class AntrianKendaraan {
             return null; // Mengembalikan null jika antrian kosong
         }
         kendaraan temp = front.data; // Simpan data kendaraan yang akan di-dequeue
-        System.out.println("Memanggil: " + front.data);
         front = front.next;
         if (front == null) {
             rear = null;
