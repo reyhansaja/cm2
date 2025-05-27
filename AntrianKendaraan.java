@@ -1,78 +1,80 @@
 public class AntrianKendaraan {
-    Node head;
-    Node tail;
+    private Node front, rear;
+    private int size;
 
-    boolean isEmpty(){
-        return(head == null);
+    public AntrianKendaraan() {
+        front = rear = null;
+        size = 0;
     }
-    public void tampilAntrian(){
-        if(!isEmpty()){
-            Node tmp = head;
-            System.out.println("Isi Linked List: \t");
-            while (tmp != null) {
-                tmp.data.tampilkanInformasi();
-                tmp = tmp.next;
-            }
-            System.out.println("");
-        }else{
-            System.out.println("Linked list kosong");
-        }
+
+    public boolean isEmpty() {
+        return front == null;
     }
-    public void tambahAntrian(kendaraan input){
-        Node ndInput = new Node(input, null);
+
+    public boolean isFull() {
+        // Simulasi: Anggap antrian penuh jika lebih dari 100
+        return size >= 100;
+    }
+
+    public void enqueue(kendaraan kn) {
+        Node newNode = new Node(kn);
         if (isEmpty()) {
-            head = ndInput;
-            tail = ndInput;
-        }else{
-            ndInput.next = head;
-            head = ndInput;
-        }
-    }
-    public void addLast(kendaraan input){
-        Node ndInput = new Node(input, null);
-        if (isEmpty()) {
-            head = ndInput;
-            tail = ndInput;
-        }else{
-            tail.next = ndInput;
-            tail = ndInput;
-        }
-    }
-    public void removeFirst(){
-        if (isEmpty()) {
-            System.out.println("List Masih kosong, tidak dapat dihapus");
-        } else if (head == tail){
-            head = tail = null;
+            front = rear = newNode;
         } else {
-            head = head.next;
+            rear.next = newNode;
+            rear = newNode;
         }
+        size++;
+        System.out.println("Mahasiswa berhasil ditambahkan ke antrian.");
     }
-    public void removeLast(){
-        if(isEmpty()){
-            System.out.println("Linked List masih kosong, tidak bisa dihapus");
-        } else if(head == tail){
-            head = tail = null;
-        } else{
-            Node temp = head;
-            while (temp.next != tail) {
-                temp = temp.next;
-            }
-            temp.next = null;
-            tail = temp;
+
+    public void dequeue() {
+        if (isEmpty()) {
+            System.out.println("Antrian kosong, tidak bisa memanggil.");
+            return;
         }
+        System.out.println("Memanggil: " + front.data);
+        front = front.next;
+        if (front == null) {
+            rear = null;
+        }
+        size--;
     }
-    public void removeAt(int index){
-        if(index == 0){
-            removeFirst();
-        }else {
-            Node temp = head;
-            for(int i = 0; i < index - 1; i++){
-                temp = temp.next;
-            }
-            temp.next = temp.next.next;
-            if (temp.next == null) {
-                tail = temp;
-            }
+
+    public void clear() {
+        front = rear = null;
+        size = 0;
+        System.out.println("Antrian telah dikosongkan.");
+    }
+
+    public void tampilkanDepan() {
+        if (!isEmpty())
+            System.out.println("Antrian Terdepan: " + front.data);
+        else
+            System.out.println("Antrian kosong.");
+    }
+
+    public void tampilkanBelakang() {
+        if (!isEmpty())
+            System.out.println("Antrian Paling Belakang: " + rear.data);
+        else
+            System.out.println("Antrian kosong.");
+    }
+
+    public void jumlahAntrian() {
+        System.out.println("Jumlah Mahasiswa dalam Antrian: " + size);
+    }
+
+    public void tampilkanSemua() {
+        if (isEmpty()) {
+            System.out.println("Antrian kosong.");
+            return;
+        }
+        System.out.println("=== Daftar Antrian Kendaraan ===");
+        Node current = front;
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
         }
     }
 }
