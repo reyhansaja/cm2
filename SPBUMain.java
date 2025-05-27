@@ -23,7 +23,7 @@ public class SPBUMain {
                     String plat = sc.nextLine();
                     System.out.print("Jenis Kendaraan: ");
                     String jenis = sc.nextLine();
-                    antrian.tambahAntrian(new Kendaraan(plat, jenis));
+                    antrian.tambahAntrian(kendaraan(plat, jenis));
                     break;
                 case 2:
                     antrian.tampilAntrian();
@@ -56,5 +56,10 @@ public class SPBUMain {
                     System.exit(0);
             }
         }
+    }
+
+    private static kendaraan kendaraan(String plat, String jenis) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'kendaraan'");
     }
 }

@@ -3,7 +3,7 @@ public class kendaraan {
     String tipe;
     String merk;
 
-    public kendaraan(String platNomor, String tipe, String merk){
+    public kendaraan(String platNomor, String tipe){
         this.platNomor = platNomor;
         this.tipe = tipe;
         this.merk = merk;
