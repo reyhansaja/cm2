@@ -28,18 +28,21 @@ public class AntrianKendaraan {
         System.out.println("Mahasiswa berhasil ditambahkan ke antrian.");
     }
 
-    public void dequeue() {
+    public kendaraan dequeue() {
         if (isEmpty()) {
             System.out.println("Antrian kosong, tidak bisa memanggil.");
-            return;
+            return null; // Mengembalikan null jika antrian kosong
         }
+        kendaraan temp = front.data; // Simpan data kendaraan yang akan di-dequeue
         System.out.println("Memanggil: " + front.data);
         front = front.next;
         if (front == null) {
             rear = null;
         }
         size--;
+        return temp; // Mengembalikan data kendaraan yang di-dequeue
     }
+
 
     public void clear() {
         front = rear = null;

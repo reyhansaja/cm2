@@ -4,7 +4,7 @@ public class SPBUMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AntrianKendaraan antrian = new AntrianKendaraan();
-        // QueueTransaksi transaksiQueue = new QueueTransaksi(100);
+        queueTransaksi transaksiQueue = new queueTransaksi(100);
 
         while (true) {
             System.out.println("\n=== SISTEM SPBU ===");
@@ -30,26 +30,26 @@ public class SPBUMain {
                 case 2:
                     antrian.tampilkanSemua();
                     break;
-                // case 3:
-                //     System.out.println("Jumlah antrian: " + antrian.jumlahAntrian());
-                //     break;
-                // case 4:
-                //     Kendaraan dilayani = antrian.layaniKendaraan();
-                //     if (dilayani == null) {
-                //         System.out.println("Antrian kosong.");
-                //     } else {
-                //         System.out.println("Melayani: " + dilayani);
-                //         System.out.print("Jenis BBM: ");
-                //         String bbm = sc.nextLine();
-                //         System.out.print("Jumlah Liter: ");
-                //         int liter = sc.nextInt(); sc.nextLine();
-                //         System.out.print("Harga per Liter: ");
-                //         double harga = sc.nextDouble(); sc.nextLine();
-                //         Transaksi trx = new Transaksi(dilayani.platNomor, bbm, liter, harga);
-                //         transaksiQueue.enqueue(trx);
-                //         System.out.println("Total Bayar: Rp" + trx.total);
-                //     }
-                //     break;
+                case 3:
+                    antrian.jumlahAntrian();
+                    break;
+                case 4:
+                    kendaraan dilayani = antrian.dequeue();
+                     if (dilayani == null) {
+                         System.out.println("Antrian kosong.");
+                     } else {
+                         System.out.println("Melayani: " + dilayani);
+                         System.out.print("Jenis BBM: ");
+                         String bbm = sc.nextLine();
+                         System.out.print("Jumlah Liter: ");
+                         int liter = sc.nextInt(); sc.nextLine();
+                         System.out.print("Harga per Liter: ");
+                         double harga = sc.nextDouble(); sc.nextLine();
+                         transaksi trx = new transaksi(dilayani.platNomor, bbm, liter, harga);
+                         transaksiQueue.enqueue(trx);
+                         System.out.println("Total Bayar: Rp" + trx.total);
+                     }
+                     break;
                 // case 5:
                 //     transaksiQueue.tampilTransaksi();
                 //     break;
