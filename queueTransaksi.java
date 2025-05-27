@@ -36,4 +36,5 @@ public class queueTransaksi {
             System.out.println((i + 1) + ". " + queue[idx]);
         }
     }
+
 }

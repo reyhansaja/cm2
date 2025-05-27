@@ -50,9 +50,9 @@ public class SPBUMain {
                          System.out.println("Total Bayar: Rp" + trx.total);
                      }
                      break;
-                // case 5:
-                //     transaksiQueue.tampilTransaksi();
-                //     break;
+                case 5:
+                    transaksiQueue.tampilTransaksi();
+                    break;
                 case 0:
                     System.out.println("Terima kasih!");
                     System.exit(0);
